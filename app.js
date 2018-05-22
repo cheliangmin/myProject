@@ -1,7 +1,7 @@
 var express = require('express');
 
 var app = express();
-
+//使用模板引擎
 app.set('view engine', 'jade');
 
 app.get('/', function (req, res) {
