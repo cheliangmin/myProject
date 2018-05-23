@@ -1,14 +1,15 @@
 1	git init
 2	 ssh-keygen -t rsa -C "cheliangmin@qq.com"
-3	´´½¨.ssh
-4	ÊäÈëÃÜÂëlyh6134068
-5	´ò¿ªid_rsa.pub£¬¸´ÖÆÀïÃæµÄkey£¨/c/Users/LYHCAR/.ssh/id_rsa£©
-6	»Øµ½githubÍøÕ¾£¬½øÈëAccount Settings£¬×ó±ßÑ¡ÔñSSH Keys£¬Add SSH Key,
-7	ÑéÖ¤ÊÇ·ñ³É¹¦£¬ÔÚgit bashÏÂÊäÈë£ºssh -T git@github.com
-8	½ÓÏÂÀ´ÎÒÃÇÒª×öµÄ¾ÍÊÇ°Ñ±¾µØ²Ö¿â´«µ½githubÉÏÈ¥£¬ÔÚ´ËÖ®Ç°»¹ĞèÒªÉèÖÃusernameºÍemail£¬ÒòÎªgithubÃ¿´Îcommit¶¼»á¼ÇÂ¼ËûÃÇ
-9	½øÈëÒªÉÏ´«µÄ²Ö¿â£¬ÓÒ¼ügit bash£¬Ìí¼ÓÔ¶³ÌµØÖ·£º
+3	åˆ›å»º.ssh
+4	è¾“å…¥å¯†ç lyh6134068
+5	æ‰“å¼€id_rsa.pubï¼Œå¤åˆ¶é‡Œé¢çš„keyï¼ˆ/c/Users/LYHCAR/.ssh/id_rsaï¼‰
+6	å›åˆ°githubç½‘ç«™ï¼Œè¿›å…¥Account Settingsï¼Œå·¦è¾¹é€‰æ‹©SSH Keysï¼ŒAdd SSH Key,
+7	éªŒè¯æ˜¯å¦æˆåŠŸï¼Œåœ¨git bashä¸‹è¾“å…¥ï¼šssh -T git@github.com
+8	æ¥ä¸‹æ¥æˆ‘ä»¬è¦åšçš„å°±æ˜¯æŠŠæœ¬åœ°ä»“åº“ä¼ åˆ°githubä¸Šå»ï¼Œåœ¨æ­¤ä¹‹å‰è¿˜éœ€è¦è®¾ç½®usernameå’Œemailï¼Œå› ä¸ºgithubæ¯æ¬¡commitéƒ½ä¼šè®°å½•ä»–ä»¬
+9	è¿›å…¥è¦ä¸Šä¼ çš„ä»“åº“ï¼Œå³é”®git bashï¼Œæ·»åŠ è¿œç¨‹åœ°å€ï¼š
 	git remote add origin git@github.com:cheliangmin/myProject
 10	git add uploadGitHub.txt 
 11	 git commit -m "uploadGitHub.txt"
-12	ÉÏ´«µ½github  git push -u origin master
+12	ä¸Šä¼ åˆ°github  git push -u origin master
+13	git pull
 
