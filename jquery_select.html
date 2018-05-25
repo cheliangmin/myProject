@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.active{
+			color: red;
+		}
+		.b{
+			background: black;
+			padding: 5px;
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+	<div class="b">hello world!</div>
+	<script src="jquery.min.js"></script>
+	<script>
+		var b = $(".b");
+		function toggle(){
+			if(b.hasClass("active")){
+				b.removeClass("active");
+			}else{
+				b.addClass("active");
+			}
+		}
+		setInterval(toggle,200);
+	</script>
+</body>
+</html>
