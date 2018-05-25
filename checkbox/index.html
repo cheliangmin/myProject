@@ -4,15 +4,22 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-		#checkbox:checked ~ div p{
+		#checkbox,div p{
 			display: none;
+		}
+		#checkbox:checked ~ div p{
+			display: block;
 		}
 	</style>
 </head>
 <body>
+	<label for="checkbox">菜单</label>
 	<input type="checkbox" id="checkbox">
 	<div>
-		<p>A</p>
+		<p>新建</p>
+		<p>我是菜单</p>
+		<p>我是菜单</p>
+		<p>退出</p>
 	</div>
 </body>
 </html>
