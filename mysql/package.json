@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "easymysql": "^0.2.7",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "mysql": "^2.15.0",
