@@ -8,6 +8,4 @@ app.use(express.static("./public"));
 
 app.get("/getuserinfo",router.getUserInfo);
 
-
-
 app.listen(3000);
