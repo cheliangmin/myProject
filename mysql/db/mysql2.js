@@ -17,7 +17,15 @@ exports.queryAllData = function(tableName,callback){
     }
   );
 }
-
+exports.execSql = function(sql,condictionArray,callback){
+  connection.execute(
+    sql,
+    condictionArray,
+    function(err, results, fields) {
+      callback(err,results);
+    }
+  );
+}
 // execute will internally call prepare and query
 // connection.execute(
 //   'SELECT * FROM `t_user` WHERE `name` = ? AND `age` > ?',
