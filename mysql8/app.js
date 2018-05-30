@@ -1,34 +1,40 @@
 
 const mysqlx = require('@mysql/xdevapi');
 
-mysqlx
-    .getSession({
+
+function find(callback) {
+    mysqlx
+        .getSession({
             host: 'localhost',
             port: 33060,
             dbUser: 'root',
             dbPassword: 'root'
         })
-    .then(session => {
-        return session
-            .startTransaction()
-            .then(() => {
-                return session
-                    .getSchema('test_schema')
-                    .getCollection('myCollection')
+        .then(session => {
+            return session
+                .startTransaction()
+                .then(() => {
+                    return session
+                        .getSchema('test_schema')
+                        .getCollection('myCollection')
                         //.modify('name = "foo"')
                         .find("$.baz.foo == 'bar'")
                         .execute(row => {
-                            console.log('Found row: %j', row);
+                            callback(row);
+                            //console.log('Found row: %j', row);
                         });
-            })
-            .then(() => {
-                return session.commit();
-            })
-            .catch(err => {
-                return session.rollback();
-            });
-    });
-
+                })
+                .then(() => {
+                    return session.commit();
+                })
+                .catch(err => {
+                    return session.rollback();
+                });
+        });
+}
+find(function(row){
+    console.log(row);
+})
 //const mysql = require('@mysql/xdevapi');
 
 
