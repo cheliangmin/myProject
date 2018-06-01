@@ -1,5 +1,7 @@
 const mysql2 = require("../../db/mysql2.js");
 
+
+
 exports.getUserInfo = getUserInfo;
 exports.doLogin = doLogin;
 
@@ -19,27 +21,39 @@ function doLogin(req,res,next){
 	mysql2.execSql(sql,[name],function(err,results){
 		var passwordQuery = "";
 		console.log(results);
+
 		if(results.length > 0){
 			passwordQuery = results[0].password;
+			var userinfo = {
+				"name":results[0].name,
+				"login":true,
+				"flag":""
+			}
 		}
 		//服务器错误
 		if(err){
 			console.log(err);
-			res.json(-3);
+			userinfo.flag = "-3";
+			res.json(userinfo);
 			return;
 		}
 		//用户名不存在
 		if(0 == results.length){
-			res.json(-2);
+			userinfo.flag = "-2";
+			res.json(userinfo);
 			return;
 		}
 		//密码错误
 		if(password != passwordQuery){
-			res.json(-1);
+			userinfo.flag = "-1";
+			res.json(userinfo);
 			return;
 		}
 		//登录成功
-		res.json(1);
+		userinfo.flag = "1";
+		req.session.login = true;
+		req.session.username = userinfo.name;
+		res.json(userinfo);
 		return;
 	});
 }
