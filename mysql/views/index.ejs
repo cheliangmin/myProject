@@ -6,30 +6,14 @@
 	<title>Document</title>
 	<script src="js/underscore_tempalte_modified.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/login/login.css">
+	<link rel="stylesheet" href="css/user/login.css">
+	<link rel="stylesheet" href="css/user/register.css">
 </head>
 <body>
 	<% include header.ejs %>
 
 	<div class="container">
-        <div id="login_form" class="row row-centered">
-            <div class="well col-md-6 col-centered">
-                <h2>欢迎登录</h2><span id="error_tips"></span>
-                <form>
-                    <div class="input-group input-group-md">
-                        <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" id="userid" name="userid" placeholder="请输入用户ID" />
-                    </div>
-                    <div class="input-group input-group-md">
-                        <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码"/>
-                    </div>
-                    <br/>
-                    <button type="button" class="btn btn-success btn-block" id="login">登录</button>
-                </form:form>
-            </div>
-        </div>
-    </div>
+	<div id="login_register"></div>
 
 	<script type="text/template" id="userinfo_moban">
 		<div id="userinfo">
@@ -41,6 +25,7 @@
 	</script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<script src="js/login/login.js"></script>
+	<script src="js/user/login.js"></script>
+	<script src="js/user/register.js"></script>
 </body>
 </html>

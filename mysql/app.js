@@ -19,4 +19,10 @@ app.get("/getuserinfo",router.getUserInfo);
 
 app.get("/dologin",router.doLogin);
 
+app.get("/dologout",router.doLogout);
+
+app.get("/doregister",router.doRegister);
+
+app.get("/finduser",router.findUser);
+
 app.listen(3000);

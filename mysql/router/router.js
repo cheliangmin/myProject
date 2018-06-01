@@ -4,6 +4,12 @@ exports.getUserInfo = user.getUserInfo;
 
 exports.doLogin = user.doLogin;
 
+exports.doLogout = user.doLogout;
+
+exports.doRegister = user.doRegister;
+
+exports.findUser = user.findUser;
+
 exports.showIndex = function(req,res,next) {
 	console.log("showIndex...");
 	var login = req.session.login || false;

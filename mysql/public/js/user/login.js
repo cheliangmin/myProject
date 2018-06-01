@@ -1,29 +1,39 @@
 
 //载入header导航
-// $(document).ready(function () {
- 
-//     $('#header').load('header.html',function(){
-//     	//显示
-//     	$("#navbar_login").click(function(){
-//     		$("li").siblings(".active").removeClass("active");
-// 			$(this).addClass("active");
-// 			$("#login_form").show();
-// 		});
-//     });
+$(document).ready(function () {
+ 	
+ 	$("#navbar_login").click(function(){
+ 		$('#login_register').html("");
+    	$('#login_register').load('html/user/login.html',function(){
+    	//显示
+    	
+    		$("li").siblings(".active").removeClass("active");
+			$(this).addClass("active");
+			$("#login_form").show();
+			$("#login").click(function(){
+				login();
+			});
+			$("#password").keydown(function(e){
+				if(13 == e.keyCode){
+					login();
+				}
+			});
+		});
+    });
     
-// });
-
-$("#navbar_login").click(function(){
-	$("li").siblings(".active").removeClass("active");
-	$(this).addClass("active");
-	$("#login_form").show();
 });
+
+// $("#navbar_login").click(function(){
+// 	$("li").siblings(".active").removeClass("active");
+// 	$(this).addClass("active");
+// 	$("#login_form").show();
+// });
 
 $("input").focus(function(){
 	$("#error_tips").html("");
 });
 
-function checkUserId(){
+function checkUserInfo(){
 	if("" == $("#userid").val()){
 		$("#error_tips").html("你还没有输入帐号！");
 		return false;
@@ -36,19 +46,23 @@ function checkUserId(){
 }
 
 
-$("#login").click(function(){
-	login();
+// $("#login").click(function(){
+// 	login();
+// });
+
+$("#navbar_logout").click(function(){
+	logout();
 });
 
-$("#password").keydown(function(e){
-	if(13 == e.keyCode){
-		login();
-	}
-});
+// $("#password").keydown(function(e){
+// 	if(13 == e.keyCode){
+// 		login();
+// 	}
+// });
 
 function login(){
 	console.log("login");
-	if(checkUserId()){
+	if(checkUserInfo()){
 		$.get("/dologin",{
 			"username":$("#userid").val(),
 			"password":$("#password").val()
@@ -75,6 +89,11 @@ function login(){
 	}
 }
 
+function logout(){
+	$.get("/dologout",function(result){
+		window.location = "/";
+	})
+}
 $("#btn").click(function(){
 	$.get("/getuserinfo",function(result){
 		//console.log(result);
