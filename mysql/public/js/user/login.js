@@ -3,12 +3,13 @@
 $(document).ready(function () {
  	
  	$("#navbar_login").click(function(){
- 		$('#login_register').html("");
-    	$('#login_register').load('html/user/login.html',function(){
+        $("li").siblings(".active").removeClass("active");
+        $(this).addClass("active");
+ 		$('#app').html("");
+    	$('#app').load('html/user/login.html',function(){
     	//显示
     	
-    		$("li").siblings(".active").removeClass("active");
-			$(this).addClass("active");
+
 			$("#login_form").show();
 			$("#login").click(function(){
 				login();

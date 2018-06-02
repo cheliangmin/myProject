@@ -8,24 +8,21 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/user/login.css">
 	<link rel="stylesheet" href="css/user/register.css">
+	<link rel="stylesheet" href="css/user/userlist.css">
+	<link rel="stylesheet" href="css/content/content.css">
 </head>
 <body>
 	<% include header.ejs %>
 
 	<div class="container">
-	<div id="login_register"></div>
+		<div id="app"></div>
+	</div>
 
-	<script type="text/template" id="userinfo_moban">
-		<div id="userinfo">
-			<div>id：{{=id}}</div>
-			<div>用户名：{{=name}}</div>
-			<div>年龄：{{=age}}</div>
-			<div>地址：{{=address}}</div>
-		</div>
-	</script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/user/login.js"></script>
 	<script src="js/user/register.js"></script>
+	<script src="js/user/userlist.js"></script>
+	<script src="js/content/content_list.js"></script>
 </body>
 </html>

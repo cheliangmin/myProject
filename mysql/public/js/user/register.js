@@ -6,12 +6,13 @@
 
 $(document).ready(function () {
 	$("#navbar_register").click(function(){
-		$('#login_register').html("");
-    	$('#login_register').load('html/user/register.html',function(){
+		$('#app').html("");
+        $("li").siblings(".active").removeClass("active");
+        $(this).addClass("active");
+    	$('#app').load('html/user/register.html',function(){
     	//显示
     	
-			$("li").siblings(".active").removeClass("active");
-			$(this).addClass("active");
+
 			$("#register_form").show();
 
 			initUserIdInput();

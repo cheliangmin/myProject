@@ -28,5 +28,6 @@ app.get("/dologout",router.doLogout);
 app.get("/doregister",router.doRegister);
 
 app.get("/finduser",router.findUser);
+app.get("/getallcontent",router.getAllContent);
 
 app.listen(3000);

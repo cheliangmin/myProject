@@ -1,5 +1,5 @@
 const user = require("./user/user.js");
-
+const content = require("./content/content.js");
 exports.getUserInfo = user.getUserInfo;
 
 exports.doLogin = user.doLogin;
@@ -9,6 +9,7 @@ exports.doLogout = user.doLogout;
 exports.doRegister = user.doRegister;
 
 exports.findUser = user.findUser;
+exports.getAllContent = content.getAllContent;
 
 exports.showIndex = function(req,res,next) {
 	console.log("showIndex...");
