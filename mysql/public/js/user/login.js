@@ -3,27 +3,30 @@
 $(document).ready(function () {
  	
  	$("#navbar_login").click(function(){
-        $("li").siblings(".active").removeClass("active");
-        $(this).addClass("active");
- 		$('#app').html("");
-    	$('#app').load('html/user/login.html',function(){
-    	//显示
-    	
-
-			$("#login_form").show();
-			$("#login").click(function(){
-				login();
-			});
-			$("#password").keydown(function(e){
-				if(13 == e.keyCode){
-					login();
-				}
-			});
-		});
+        if(0 == $('#app').find("#login_form").length ) {
+            $("li").siblings(".active").removeClass("active");
+            $(this).addClass("active");
+            $('#app').html("");
+            $('#app').load('html/user/login.html', function () {
+                $("#login_form").show();
+                doLogin();
+            });
+        }else{
+            doLogin();
+		}
     });
     
 });
-
+function doLogin() {
+    $("#login").click(function () {
+        login();
+    });
+    $("#password").keydown(function (e) {
+        if (13 == e.keyCode) {
+            login();
+        }
+    });
+}
 // $("#navbar_login").click(function(){
 // 	$("li").siblings(".active").removeClass("active");
 // 	$(this).addClass("active");

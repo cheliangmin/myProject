@@ -20,6 +20,7 @@ function doLogin(req,res,next){
 	console.log("doLogin...");
 	var name = req.query.username;
 	var password = req.query.password;
+    password = md5(md5(password) + "lyhcar");
 	var sql = 'SELECT * FROM `t_user` WHERE `name` = ? ';
 	mysql2.execSql(sql,[name],function(err,results){
 		var passwordQuery = "";

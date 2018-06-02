@@ -6,37 +6,37 @@
 
 $(document).ready(function () {
 	$("#navbar_register").click(function(){
-		$('#app').html("");
-        $("li").siblings(".active").removeClass("active");
-        $(this).addClass("active");
-    	$('#app').load('html/user/register.html',function(){
-    	//显示
-    	
-
-			$("#register_form").show();
-
-			initUserIdInput();
-            initPasswordInput();
-
-			checkUserName();
-			checkPassword();
-
-
-			$("#register").click(function(){
-                console.log(checkAll());
-				if(checkAll())
-				register();
-			});
-			$("#password").keydown(function(e){
-				if(13 == e.keyCode){
-                    if(checkAll())
-					register();
-				}
-			});
-		});
+        if(0 == $('#app').find("#register_form").length ) {
+            $('#app').html("");
+            $("li").siblings(".active").removeClass("active");
+            $(this).addClass("active");
+            $('#app').load('html/user/register.html', function () {
+                $("#register_form").show();
+                doRegister();
+            });
+        }else{
+            doRegister();
+		}
     });
     
 });
+function doRegister() {
+    initUserIdInput();
+    initPasswordInput();
+    checkUserName();
+    checkPassword();
+    $("#register").click(function () {
+        console.log(checkAll());
+        if (checkAll())
+            register();
+    });
+    $("#password").keydown(function (e) {
+        if (13 == e.keyCode) {
+            if (checkAll())
+                register();
+        }
+    });
+}
 function checkAll(){
 	if($("#userid").parent("div").hasClass("has-success") &&
 		$("#password").parent("div").hasClass("has-success")){
