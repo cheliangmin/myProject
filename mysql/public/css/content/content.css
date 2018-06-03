@@ -4,3 +4,24 @@
 .content_title{
     width: 460px;
 }
+.content-header{
+    min-height: 22px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.content-body{
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#content_display{
+    border: 1px dashed #ddd;
+}
+#content_form div:hover{
+    display: block;
+    background: #eee;
+
+}

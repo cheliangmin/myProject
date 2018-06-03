@@ -2,18 +2,21 @@
 
 </div>
 <script type="text/template" id="content_moban">
-    <div class="pannel panel-default">
-        <div class="pannel panel-heading">
-            {{=title}}
+    <div id="content_display" class="pannel panel-default">
+        <div class="content-header">
+            <div class="title col-lg-8"><a href="#">{{=title}}</a></div>
+            <div class="author col-lg-2 glyphicon glyphicon-user">{{=author}} </div>
+            <div class="date col-lg-2">{{=createDate}}</div>
         </div>
-        <div class="pannel panel-body">
+
+        <div class="content-body ">
             {{=content}}
         </div>
-        <div class="pannel panel-footer">
-            <div class="small text-muted">
-                {{=createDate}}|{{=author}}
-            </div>
-        </div>
+        <!--<div class="pannel panel-footer">-->
+            <!--<div class="small text-muted">-->
+
+            <!--</div>-->
+        <!--</div>-->
     </div>
-    <br>
+
 </script>
