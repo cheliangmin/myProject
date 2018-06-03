@@ -5,10 +5,17 @@
 // });
 
 $(document).ready(function () {
+
+	//点击导航注册按钮
 	$("#navbar_register").click(function(){
+        $('#footer_app').html("");
+		//判断注册页面是否加载，没有就load
         if(0 == $('#app').find("#register_form").length ) {
+        	//加载前先清空别的页面
             $('#app').html("");
+            //清除li元素的class：active
             $("li").siblings(".active").removeClass("active");
+            //为点击的li元素添加class:active
             $(this).addClass("active");
             $('#app').load('html/user/register.html', function () {
                 $("#register_form").show();
@@ -21,15 +28,21 @@ $(document).ready(function () {
     
 });
 function doRegister() {
+	//点击userid时，清除错误提示
     initUserIdInput();
+    //点击password时，清除错误提示
     initPasswordInput();
+    //检查用户名是否存在和空
     checkUserName();
+    //检查密码是否为空
     checkPassword();
+    //点击注册按钮
     $("#register").click(function () {
         console.log(checkAll());
         if (checkAll())
             register();
     });
+    //在密码框增加回车注册
     $("#password").keydown(function (e) {
         if (13 == e.keyCode) {
             if (checkAll())
@@ -37,6 +50,7 @@ function doRegister() {
         }
     });
 }
+//检查所有输入框是否都是成功状态
 function checkAll(){
 	if($("#userid").parent("div").hasClass("has-success") &&
 		$("#password").parent("div").hasClass("has-success")){
@@ -65,7 +79,6 @@ function checkUserName(){
 					return false;
 				}else if(result == 1){
 					$("#userid").parent("div").addClass("has-success");
-                    console.log("checkUserName return true");
 					return true;
 				}
 			});

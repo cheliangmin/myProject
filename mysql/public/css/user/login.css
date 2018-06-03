@@ -26,3 +26,6 @@
 #error_tips{
 	color: red;
 }
+#app{
+    padding-bottom: 10px;
+}

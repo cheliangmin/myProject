@@ -1,5 +1,7 @@
 $(document).ready(function () {
+
     $("#navbar_userlist").click(function(){
+        $('#footer_app').html("");
         if(0 == $('#app').find("#userlist_detail").length ) {
             $('#app').html("");
             $("li").siblings(".active").removeClass("active");

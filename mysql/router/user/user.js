@@ -7,7 +7,13 @@ exports.doLogin = doLogin;
 exports.doLogout = doLogout;
 exports.doRegister = doRegister;
 exports.findUser = findUser;
+exports.getUser = getUser;
 
+function getUser(req,res,next){
+	console.log("getUser");
+	var login = req.session.login || false;
+	res.json(login);
+}
 function getUserInfo(req,res,next){
 	console.log("getUserInfo...");
 	mysql2.queryAllData("t_user",function(err,results){

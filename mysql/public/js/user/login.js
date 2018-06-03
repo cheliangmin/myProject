@@ -1,8 +1,9 @@
 
 //载入header导航
 $(document).ready(function () {
- 	
+
  	$("#navbar_login").click(function(){
+        $('#footer_app').html("");
         if(0 == $('#app').find("#login_form").length ) {
             $("li").siblings(".active").removeClass("active");
             $(this).addClass("active");

@@ -5,11 +5,12 @@ exports.getUserInfo = user.getUserInfo;
 exports.doLogin = user.doLogin;
 
 exports.doLogout = user.doLogout;
-
 exports.doRegister = user.doRegister;
-
 exports.findUser = user.findUser;
+exports.getUser = user.getUser;
+
 exports.getAllContent = content.getAllContent;
+exports.doAddContent = content.doAddContent;
 
 exports.showIndex = function(req,res,next) {
 	console.log("showIndex...");

@@ -29,5 +29,7 @@ app.get("/doregister",router.doRegister);
 
 app.get("/finduser",router.findUser);
 app.get("/getallcontent",router.getAllContent);
+app.post("/doaddcontent",router.doAddContent);
+app.get("/getuser",router.getUser);
 
 app.listen(3000);
