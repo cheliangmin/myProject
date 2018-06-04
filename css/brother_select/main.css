@@ -1,0 +1,14 @@
+/*相邻选择器只会从上往下走*/
+div {
+	margin: 10px;
+	background: rgba(0,255,255,0.1);
+	padding: 10px;
+}
+/*+选择后面一个元素*/
+.a + div {
+	background: rgba(255,0,0,0.2);
+}
+/*~选择后面所有元素*/
+.a ~ div {
+	border: 1px dashed rgba(0,255,0,0.5);
+}

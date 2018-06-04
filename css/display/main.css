@@ -1,0 +1,15 @@
+.block{
+	background: rgba(255,0,0,.2);
+}
+.inline{
+	display: inline;
+	background: rgba(0,255,0,.2);
+	padding: 30px;
+	margin: 30px;
+}
+.inline-block{
+	display: inline-block;
+	background: rgba(0,0,255,.2);
+	padding: 30px;
+	margin: 30px;
+}

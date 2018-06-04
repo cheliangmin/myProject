@@ -1,0 +1,17 @@
+a:link{
+	color: blue;
+}
+
+a:visited{
+	color:gray;
+}
+button:hover,a:hover{
+	background: rgba(0,255,255,0.3);
+}
+button:active{
+	background: rgba(255,0,0,0.9);
+}
+input:focus{
+	outline: none;
+	background: rgba(0,255,0,0.4);
+}

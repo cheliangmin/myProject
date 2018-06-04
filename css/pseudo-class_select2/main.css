@@ -1,0 +1,21 @@
+p:first-letter{
+	font-size: 50px;
+}
+
+.help:before{
+	content: "+";
+	color: green;
+}
+.help:after{
+	content: "[?]";
+	color: red;
+}
+div a:last-child{
+	color:blue;
+}
+div a:nth-child(2){
+	background: rgba(255,0,0,0.3);
+}
+div p:first-child{
+	color: blue;
+}
