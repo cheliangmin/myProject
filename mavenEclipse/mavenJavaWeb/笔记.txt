@@ -1,0 +1,21 @@
+1、建立maven项目一样，在Packaging选择war
+2、右键刚建好的项目，选择properties，点击Project Facets
+3、点击去掉Dynamic Web Module，点击Apply
+4、再点击Dynamic Web Module，选择下面出现的配置
+5、把第二项改成src/main/webapp,点击确定，生成web.xml
+6、新建jsp页面出现错误，在pom.xml增加依赖servlet-api可以解决，具体如下：
+  <dependencies>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>servlet-api</artifactId>
+  		<version>2.5</version>
+  		<scope>provided</scope>
+  	</dependency>
+  </dependencies> 
+7、mvn compile字符集警告可以在pom.xml中增加
+  <properties>  
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+  </properties>
+8、Browse Deployment Location 功能的插件名称为： Pivotal tc Server Integration for Eclipse  可在Eclippse的Eclipse MarketPlace中找到
+在Eclipse MarketPlace 中的Find输入Browse Deployment Location的名称 "Pivotal tc Server Integration for Eclipse“，搜索，找到图中对应的，下载即可
+9、莫名其妙的jsp页面nullpointer，就应该去查找pom.xml中的scope是否把provided写成compile
