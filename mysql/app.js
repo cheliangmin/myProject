@@ -13,6 +13,10 @@ app.use(session({
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
 
+app.get("/favicon.ico",function(req,res,next){
+  next();
+});
+
 app.get("/",router.showIndex);
 
 app.get("/getuserinfo",router.getUserInfo);
@@ -24,5 +28,8 @@ app.get("/dologout",router.doLogout);
 app.get("/doregister",router.doRegister);
 
 app.get("/finduser",router.findUser);
+app.get("/getallcontent",router.getAllContent);
+app.post("/doaddcontent",router.doAddContent);
+app.get("/getuser",router.getUser);
 
 app.listen(3000);

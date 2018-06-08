@@ -1,5 +1,5 @@
 const mysql2 = require("../../db/mysql2.js");
-
+const md5 = require("../../utils/md5.js");
 
 
 exports.getUserInfo = getUserInfo;
@@ -7,7 +7,13 @@ exports.doLogin = doLogin;
 exports.doLogout = doLogout;
 exports.doRegister = doRegister;
 exports.findUser = findUser;
+exports.getUser = getUser;
 
+function getUser(req,res,next){
+	console.log("getUser");
+	var login = req.session.login || false;
+	res.json(login);
+}
 function getUserInfo(req,res,next){
 	console.log("getUserInfo...");
 	mysql2.queryAllData("t_user",function(err,results){
@@ -20,6 +26,7 @@ function doLogin(req,res,next){
 	console.log("doLogin...");
 	var name = req.query.username;
 	var password = req.query.password;
+    password = md5(md5(password) + "lyhcar");
 	var sql = 'SELECT * FROM `t_user` WHERE `name` = ? ';
 	mysql2.execSql(sql,[name],function(err,results){
 		var passwordQuery = "";
@@ -72,12 +79,15 @@ function doLogout(req,res,next){
 }
 
 function doRegister(req,res,nect) {
-	console.log("doLogin...");
+	console.log("doRegister...");
 	var name = req.query.username;
 	var password = req.query.password;
-	
+
+    password = md5(md5(password) + "lyhcar");
+
 	var sqlInsert = 'INSERT INTO `t_user`(name,password) VALUES(?,?) ';
-	//console.log(name +" "+password);
+	console.log("新增注册："+name +" "+password);
+
 	mysql2.execSql(sqlInsert,[name,password],function(err,results){
 		//console.log(results);
 		if(err){
