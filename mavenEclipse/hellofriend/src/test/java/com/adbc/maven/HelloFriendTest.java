@@ -1,8 +1,10 @@
 package com.adbc.maven;
-import static junit.framework.Assert.assertEquals;
-import org.junit.Test;
 
-import com.adbc.maven.Hello;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+
+
 import com.adbc.maven.HelloFriend;
 
 public class HelloFriendTest {

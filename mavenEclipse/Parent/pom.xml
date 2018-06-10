@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.adbc.maven</groupId>
+  <artifactId>Parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <!-- 配置聚合，也就是一键安装 -->
+  <modules>
+  	<module>../Hello</module>
+  	<module>../HelloFriend</module>
+  	<module>../MakeFriends</module>
+  </modules>
+  <!-- 配置继承 -->
+  <dependencyManagement>
+	  <dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<!-- 为了统一管理junit版本 -->
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
+	   </dependencies>
+  </dependencyManagement>
+</project>

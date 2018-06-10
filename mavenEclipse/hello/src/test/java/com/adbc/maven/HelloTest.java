@@ -5,11 +5,11 @@
 * @Last Modified time: 2018-06-07 20:48:38
 */
 package com.adbc.maven;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.adbc.maven.Hello;
 
-import static junit.framework.Assert.*;
 public class HelloTest {
     @Test
     public void testHello(){

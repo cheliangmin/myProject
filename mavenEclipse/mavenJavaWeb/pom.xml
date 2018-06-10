@@ -36,4 +36,36 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<scope>test</scope>
 	</dependency>
   </dependencies> 
+  <!-- 自动化部署 -->
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.codehaus.cargo</groupId>
+    		<artifactId>cargo-maven2-plugin</artifactId>
+    		<version>1.2.3</version>
+    		<configuration>
+    			<container>
+    				<containerId>tomcat6x</containerId>
+    				<home>G:\app\tomcat\apache-tomcat-6.0.53</home>
+    			</container>
+    			<configuration>
+    				<type>existing</type>
+    				<home>G:\app\tomcat\apache-tomcat-6.0.53</home>
+    				<properties>
+    					<cargo.servlet.port>8080</cargo.servlet.port>
+    				</properties>
+    			</configuration>
+    		</configuration>
+    		<executions>
+    			<execution>
+    				<id>cargo-run</id>
+    				<phase>install</phase>
+    				<goals>
+    					<goal>run</goal>
+    				</goals>
+    			</execution>
+    		</executions>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>

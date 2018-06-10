@@ -9,11 +9,16 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>HelloFriend</name>
 	<url>http://maven.apache.org</url>
+	<parent>
+	  <groupId>com.adbc.maven</groupId>
+	  <artifactId>Parent</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	  <relativePath>../Parent/pom.xml</relativePath>
+	</parent>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -22,6 +27,7 @@
 			<version>1.0-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
+
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

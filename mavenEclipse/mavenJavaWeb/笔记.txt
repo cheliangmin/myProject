@@ -1,9 +1,9 @@
-1¡¢½¨Á¢mavenÏîÄ¿Ò»Ñù£¬ÔÚPackagingÑ¡Ôñwar
-2¡¢ÓÒ¼ü¸Õ½¨ºÃµÄÏîÄ¿£¬Ñ¡Ôñproperties£¬µã»÷Project Facets
-3¡¢µã»÷È¥µôDynamic Web Module£¬µã»÷Apply
-4¡¢ÔÙµã»÷Dynamic Web Module£¬Ñ¡ÔñÏÂÃæ³öÏÖµÄÅäÖÃ
-5¡¢°ÑµÚ¶şÏî¸Ä³Ésrc/main/webapp,µã»÷È·¶¨£¬Éú³Éweb.xml
-6¡¢ĞÂ½¨jspÒ³Ãæ³öÏÖ´íÎó£¬ÔÚpom.xmlÔö¼ÓÒÀÀµservlet-api¿ÉÒÔ½â¾ö£¬¾ßÌåÈçÏÂ£º
+1ã€å»ºç«‹mavené¡¹ç›®ä¸€æ ·ï¼Œåœ¨Packagingé€‰æ‹©war
+2ã€å³é”®åˆšå»ºå¥½çš„é¡¹ç›®ï¼Œé€‰æ‹©propertiesï¼Œç‚¹å‡»Project Facets
+3ã€ç‚¹å‡»å»æ‰Dynamic Web Moduleï¼Œç‚¹å‡»Apply
+4ã€å†ç‚¹å‡»Dynamic Web Moduleï¼Œé€‰æ‹©ä¸‹é¢å‡ºç°çš„é…ç½®
+5ã€æŠŠç¬¬äºŒé¡¹æ”¹æˆsrc/main/webapp,ç‚¹å‡»ç¡®å®šï¼Œç”Ÿæˆweb.xml
+6ã€æ–°å»ºjspé¡µé¢å‡ºç°é”™è¯¯ï¼Œåœ¨pom.xmlå¢åŠ ä¾èµ–servlet-apiå¯ä»¥è§£å†³ï¼Œå…·ä½“å¦‚ä¸‹ï¼š
   <dependencies>
   	<dependency>
   		<groupId>javax.servlet</groupId>
@@ -12,10 +12,10 @@
   		<scope>provided</scope>
   	</dependency>
   </dependencies> 
-7¡¢mvn compile×Ö·û¼¯¾¯¸æ¿ÉÒÔÔÚpom.xmlÖĞÔö¼Ó
+7ã€mvn compileå­—ç¬¦é›†è­¦å‘Šå¯ä»¥åœ¨pom.xmlä¸­å¢åŠ 
   <properties>  
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
   </properties>
-8¡¢Browse Deployment Location ¹¦ÄÜµÄ²å¼şÃû³ÆÎª£º Pivotal tc Server Integration for Eclipse  ¿ÉÔÚEclippseµÄEclipse MarketPlaceÖĞÕÒµ½
-ÔÚEclipse MarketPlace ÖĞµÄFindÊäÈëBrowse Deployment LocationµÄÃû³Æ "Pivotal tc Server Integration for Eclipse¡°£¬ËÑË÷£¬ÕÒµ½Í¼ÖĞ¶ÔÓ¦µÄ£¬ÏÂÔØ¼´¿É
-9¡¢ÄªÃûÆäÃîµÄjspÒ³Ãænullpointer£¬¾ÍÓ¦¸ÃÈ¥²éÕÒpom.xmlÖĞµÄscopeÊÇ·ñ°ÑprovidedĞ´³Écompile
+8ã€Browse Deployment Location åŠŸèƒ½çš„æ’ä»¶åç§°ä¸ºï¼š Pivotal tc Server Integration for Eclipse  å¯åœ¨Eclippseçš„Eclipse MarketPlaceä¸­æ‰¾åˆ°
+åœ¨Eclipse MarketPlace ä¸­çš„Findè¾“å…¥Browse Deployment Locationçš„åç§° "Pivotal tc Server Integration for Eclipseâ€œï¼Œæœç´¢ï¼Œæ‰¾åˆ°å›¾ä¸­å¯¹åº”çš„ï¼Œä¸‹è½½å³å¯
+9ã€è«åå…¶å¦™çš„jspé¡µé¢nullpointerï¼Œå°±åº”è¯¥å»æŸ¥æ‰¾pom.xmlä¸­çš„scopeæ˜¯å¦æŠŠprovidedå†™æˆcompile
