@@ -1,0 +1,165 @@
+2018-06-08 09:17:56,035 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2018-06-08 09:17:59,990 [Worker-3] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2018-06-08 09:18:00,062 [Worker-3] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2018-06-08 09:26:58,080 [Worker-3] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: null
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at java.io.PipedInputStream.read(PipedInputStream.java:378) ~[na:1.7.0_45]
+	at java.io.InputStream.read(InputStream.java:101) ~[na:1.7.0_45]
+	at org.codehaus.plexus.util.IOUtil.copy(IOUtil.java:188) ~[plexus-utils-2.0.6.jar:na]
+	at org.codehaus.plexus.util.IOUtil.copy(IOUtil.java:174) ~[plexus-utils-2.0.6.jar:na]
+	at org.codehaus.plexus.util.FileUtils.copyStreamToFile(FileUtils.java:1143) ~[plexus-utils-2.0.6.jar:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$LocalCacheIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:700) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1237) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1192) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:707) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+java.util.concurrent.CancellationException: null
+	at com.ning.http.client.providers.netty.NettyResponseFuture.cancel(NettyResponseFuture.java:154) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher.cancel(AsyncFetcher.java:92) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$MonitorListener.checkCancelled(AsyncFetcher.java:274) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$MonitorListener.onStatus(AsyncFetcher.java:279) ~[na:na]
+	at com.ning.http.client.SimpleAsyncHttpClient$BodyConsumerAsyncHandler.fireStatus(SimpleAsyncHttpClient.java:828) ~[na:na]
+	at com.ning.http.client.SimpleAsyncHttpClient$BodyConsumerAsyncHandler.onStatusReceived(SimpleAsyncHttpClient.java:779) ~[na:na]
+	at com.ning.http.client.providers.netty.NettyAsyncHttpProvider.updateStatusAndInterrupt(NettyAsyncHttpProvider.java:1587) ~[na:na]
+	at com.ning.http.client.providers.netty.NettyAsyncHttpProvider.messageReceived(NettyAsyncHttpProvider.java:1242) ~[na:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:80) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:783) ~[na:na]
+	at org.jboss.netty.handler.stream.ChunkedWriteHandler.handleUpstream(ChunkedWriteHandler.java:149) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:783) ~[na:na]
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) ~[na:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:80) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:783) ~[na:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:302) ~[na:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.unfoldAndFireMessageReceived(ReplayingDecoder.java:522) ~[na:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:506) ~[na:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:443) ~[na:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:80) ~[na:na]
+	at org.jboss.netty.handler.codec.http.HttpClientCodec.handleUpstream(HttpClientCodec.java:77) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559) ~[na:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:274) ~[na:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:261) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:349) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:280) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:200) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) ~[na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) ~[na:1.7.0_45]
+	at java.lang.Thread.run(Thread.java:744) ~[na:1.7.0_45]
+2018-06-08 10:49:31,801 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2018-06-08 10:49:39,896 [Worker-1] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2018-06-08 10:49:41,066 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2018-06-08 10:50:45,923 [Worker-2] ERROR o.e.m.c.internal.embedder.MavenImpl - Could not read settings.xml, assuming default values
+org.apache.maven.settings.building.SettingsBuildingException: 1 problem was encountered while building the effective settings
+[FATAL] Non-parseable settings C:\apache-maven-3.5.3\conf\settings.xml: end tag name </profiles> must be the same as start tag <settings> from line 46 (position: TEXT seen ...</profile>\n    -->\n  </profiles>... @282:14)  @ C:\apache-maven-3.5.3\conf\settings.xml, line 282, column 14
+
+	at org.apache.maven.settings.building.DefaultSettingsBuilder.build(DefaultSettingsBuilder.java:116) ~[maven-settings-builder-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.getSettings(MavenImpl.java:456) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.reloadSettings(MavenImpl.java:520) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.mavenConfigurationChange(MavenImpl.java:542) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.preferences.MavenConfigurationImpl.preferenceChange(MavenConfigurationImpl.java:166) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.core.internal.preferences.EclipsePreferences$3.run(EclipsePreferences.java:896) [org.eclipse.equinox.preferences_3.5.100.v20130422-1538.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.6.200.v20130402-1505.jar:na]
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:899) [org.eclipse.equinox.preferences_3.5.100.v20130422-1538.jar:na]
+	at org.eclipse.core.internal.preferences.EclipsePreferences.put(EclipsePreferences.java:912) [org.eclipse.equinox.preferences_3.5.100.v20130422-1538.jar:na]
+	at org.eclipse.m2e.core.internal.preferences.MavenConfigurationImpl.setUserSettingsFile(MavenConfigurationImpl.java:134) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.ui.internal.preferences.MavenSettingsPreferencePage$1.run(MavenSettingsPreferencePage.java:138) [org.eclipse.m2e.core.ui_1.4.0.me201309270159.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2018-06-08 10:50:47,614 [Worker-2] ERROR o.e.m.c.internal.embedder.MavenImpl - Could not read settings.xml, assuming default values
+org.apache.maven.settings.building.SettingsBuildingException: 1 problem was encountered while building the effective settings
+[FATAL] Non-parseable settings C:\apache-maven-3.5.3\conf\settings.xml: end tag name </profiles> must be the same as start tag <settings> from line 46 (position: TEXT seen ...</profile>\n    -->\n  </profiles>... @282:14)  @ C:\apache-maven-3.5.3\conf\settings.xml, line 282, column 14
+
+	at org.apache.maven.settings.building.DefaultSettingsBuilder.build(DefaultSettingsBuilder.java:116) ~[maven-settings-builder-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.getSettings(MavenImpl.java:456) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.reloadSettings(MavenImpl.java:520) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.ui.internal.preferences.MavenSettingsPreferencePage$1.run(MavenSettingsPreferencePage.java:152) [org.eclipse.m2e.core.ui_1.4.0.me201309270159.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+2018-06-08 10:55:19,362 [Worker-1] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: null
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at java.io.PipedInputStream.read(PipedInputStream.java:378) ~[na:1.7.0_45]
+	at java.io.InputStream.read(InputStream.java:101) ~[na:1.7.0_45]
+	at org.codehaus.plexus.util.IOUtil.copy(IOUtil.java:188) ~[plexus-utils-2.0.6.jar:na]
+	at org.codehaus.plexus.util.IOUtil.copy(IOUtil.java:174) ~[plexus-utils-2.0.6.jar:na]
+	at org.codehaus.plexus.util.FileUtils.copyStreamToFile(FileUtils.java:1143) ~[plexus-utils-2.0.6.jar:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$LocalCacheIndexAdaptor.setIndexFile(DefaultIndexUpdater.java:700) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:844) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1237) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1192) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:707) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:72) [org.eclipse.m2e.core_1.4.0.me201310171809.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20130429-1813.jar:na]
+java.util.concurrent.CancellationException: null
+	at com.ning.http.client.providers.netty.NettyResponseFuture.cancel(NettyResponseFuture.java:154) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher.cancel(AsyncFetcher.java:92) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$MonitorListener.checkCancelled(AsyncFetcher.java:274) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$MonitorListener.onStatus(AsyncFetcher.java:279) ~[na:na]
+	at com.ning.http.client.SimpleAsyncHttpClient$BodyConsumerAsyncHandler.fireStatus(SimpleAsyncHttpClient.java:828) ~[na:na]
+	at com.ning.http.client.SimpleAsyncHttpClient$BodyConsumerAsyncHandler.onStatusReceived(SimpleAsyncHttpClient.java:779) ~[na:na]
+	at com.ning.http.client.providers.netty.NettyAsyncHttpProvider.updateStatusAndInterrupt(NettyAsyncHttpProvider.java:1587) ~[na:na]
+	at com.ning.http.client.providers.netty.NettyAsyncHttpProvider.messageReceived(NettyAsyncHttpProvider.java:1242) ~[na:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:80) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:783) ~[na:na]
+	at org.jboss.netty.handler.stream.ChunkedWriteHandler.handleUpstream(ChunkedWriteHandler.java:149) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:783) ~[na:na]
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:104) ~[na:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:80) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:783) ~[na:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:302) ~[na:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.unfoldAndFireMessageReceived(ReplayingDecoder.java:522) ~[na:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:506) ~[na:na]
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:443) ~[na:na]
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:80) ~[na:na]
+	at org.jboss.netty.handler.codec.http.HttpClientCodec.handleUpstream(HttpClientCodec.java:77) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559) ~[na:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:274) ~[na:na]
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:261) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:349) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.processSelectedKeys(NioWorker.java:280) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:200) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) ~[na:1.7.0_45]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) ~[na:1.7.0_45]
+	at java.lang.Thread.run(Thread.java:744) ~[na:1.7.0_45]
+2018-06-08 11:08:12,101 [main] INFO  c.g.e.m.h.c.ui.Html5AppCoreUIPlugin - Pluging started
+2018-06-08 11:11:15,425 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.adbc.maven:mavenJava:0.0.1-SNAPSHOT @ D:\myProject\mavenMyeclipse\mavenJava\pom.xml.
+2018-06-08 11:11:18,707 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mavenJava/src/main/java
+2018-06-08 11:11:18,709 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /mavenJava/src/main/resources
+2018-06-08 11:11:18,710 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mavenJava/src/test/java
+2018-06-08 11:11:18,711 [Worker-5] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /mavenJava/src/test/resources
+2018-06-08 11:11:18,760 [Worker-1] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.adbc.maven:mavenJava:0.0.1-SNAPSHOT @ D:\myProject\mavenMyeclipse\mavenJava\pom.xml.
+2018-06-08 11:11:26,710 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.adbc.maven:mavenJava:0.0.1-SNAPSHOT @ D:\myProject\mavenMyeclipse\mavenJava\pom.xml.
+2018-06-08 11:11:26,782 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:11:26,792 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:11:26,797 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:11:26,799 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:13:11,151 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.adbc.maven:mavenJava:0.0.1-SNAPSHOT @ D:\myProject\mavenMyeclipse\mavenJava\pom.xml.
+2018-06-08 11:13:11,210 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:13:11,216 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:13:11,218 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:13:11,220 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:13:47,368 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.adbc.maven:mavenJava:0.0.1-SNAPSHOT @ D:\myProject\mavenMyeclipse\mavenJava\pom.xml.
+2018-06-08 11:13:47,423 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:13:47,424 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:13:47,427 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:13:47,428 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:15:36,303 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:15:36,305 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-06-08 11:15:36,307 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2018-06-08 11:15:36,308 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
