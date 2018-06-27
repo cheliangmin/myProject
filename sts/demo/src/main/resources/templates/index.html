@@ -3,29 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>[[${title}]]</title>
+
+<link rel="stylesheet" th:href="@{/css/index/autocomplete.css}">
+<link rel="stylesheet" th:href="@{/css/index/style.css}">
+
+<script th:src="@{/js/jquery/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/index/autocomplete.js}"></script>
+
+
 </head>
 <body>
 <h1>[[${context}]]</h1>
+<hr>
+<div id="demo">
+	<div class="wrapper">
+		<h3>试试输入"百度"</h3>
+		<div id="search-form"></div>
+		<div id="message"></div>
+	</div>
+</div>
 
-<table border="1">
-	<thead>
-		<tr>
-			<th>id</th>
-			<th>名字</th>
-			<th>密码</th>
-			<th>年龄</th>
-			<th>住址</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr th:each="user:${list}">
-			<td>[[${user.id}]]</td>
-			<td>[[${user.name}]]</td>
-			<td>[[${user.password}]]</td>
-			<td>[[${user.age}]]</td>
-			<td>[[${user.address}]]</td>
-		</tr>
-	</tbody>
-</table>
+<script th:src="@{/js/index/index.js}"></script>
 </body>
 </html>
